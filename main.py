@@ -5,7 +5,8 @@ def astar_search(graph,heuristics,start,goal):
     visited=set()
     path_cost={start:0}
     while pq:
-        _, current=heapq.heappop(pq)
+        _, current=heapq.heappop(pq)#For proper unpacking of elements from the tuples,the fisrt value is neglected using the _, convention
+                                    #We want the node itself,not its heuristic
         if current==goal:
             print(current,end=",")
             return
